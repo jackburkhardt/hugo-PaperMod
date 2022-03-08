@@ -27,7 +27,7 @@
 {{- $pages := union .RegularPages .Sections }}
 
 {{- if .IsHome }}
-{{- $pages = where .Site.Pages "Params.tags" "intersect" "featured" }}
+{{- $pages = where .Site.Pages "Params.tags" "intersect" (slice "featured") }}
 {{- end }}
 
 {{- $paginator := .Paginate $pages }}
